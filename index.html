@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my card</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <i class="fas fa-heartbeat heartbeat-icon"></i>
+
+    <style>
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1);
+        }
+        75% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .heartbeat-icon {
+        animation: heartbeat 1s infinite;
+        color: #f44336;
+      }
+    </style>
+    <i class="fas fa-star bounce-icon"></i>
+
+    <style>
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .bounce-icon {
+        animation: bounce 1s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="animate__animated animate__fadeInDown">
+      <h1>Immersion in my skills!</h1>
+      <nav>
+        <ul>
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About us</a></li>
+          <li><a href="#" class="nav-link">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro animate__animated animate__fadeIn">
+        <h2>About the site</h2>
+        <p>
+          Hello, my name is
+          <i
+            class="fa-brands fa-github-alt fa-1x fas fa-heartbeat heartbeat-icon"
+            style="color: rgb(67, 80, 198)"
+          >
+            Kirill
+          </i>
+          and I am a beginner Frontend developer. This site is made to
+          demonstrate my capabilities and additional information about me.
+        </p>
+        <div class="button-container">
+          <button id="changeColorBtn" class="pulse">Change color</button>
+          <button id="magicBtn" class="shake">Magic</button>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature animate__animated">
+          <h3>Simplicity</h3>
+          <p>Clean and understandable code</p>
+          <i class="fa-solid fa-virus-covid"></i>
+        </div>
+        <div class="feature animate__animated">
+          <h3>Adaptability</h3>
+          <p>Works on all devices</p>
+          <div class="icon">📱</div>
+        </div>
+        <div class="feature animate__animated">
+          <h3>Animations</h3>
+          <p>Smooth transitions and effects</p>
+          <i
+            class="fa-brands fa-square-odnoklassniki fa-4x fas fa-star bounce-icon"
+            style="color: orange"
+          ></i>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2 class="gallery-title">My penis</h2>
+        <div class="gallery-container">
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="animate__animated animate__fadeInUp">
+      <p>&copy; 2025 BucenikProduct</p>
+      <div class="social-icons">
+        <span class="icon">👍</span>
+        <span class="icon">❤️</span>
+        <span class="icon">🔔</span>
+      </div>
+    </footer>
+
+    <div class="floating-button">↑</div>
+    <h1 id="rotate3d-text">3D Текст</h1>
+
+    <script>
+      const rotateText = document.getElementById("rotate3d-text");
+      let angle = 0;
+
+      function animate() {
+        angle = (angle + 1) % 360;
+        rotateText.style.transform = `perspective(500px) rotateY(${angle}deg)`;
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
